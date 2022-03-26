@@ -1,15 +1,18 @@
-ckeditor5_layerCake:
-  library: ckeditor5_layercake/layercake
-  admin_library: ckeditor5_layercake/admin
-  plugins:
-    - layerCake.SimpleBox
-    - layerCake.TwoCol
-  toolbar_items:
-    simpleBox:
-      label: Simple Box
-    twoCol:
-      label: Two Col
-  elements:
-    - <h1 class>
-    - <div class>
-    - <section class>
+ckeditor5_layercake_layerCake:
+  ckeditor5:
+    plugins:
+      - layerCake.SimpleBox
+      - layerCake.TwoCol
+  drupal:
+    label: Layer cake
+    library: ckeditor5_layercake/layercake
+    admin_library: ckeditor5_layercake/admin
+    toolbar_items:
+      simpleBox:
+        label: Simple Box
+      twoCol:
+        label: Two Col
+    elements:
+      - <h1 class>
+      - <div class>
+      - <section class>
