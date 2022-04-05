@@ -4,7 +4,20 @@ export default class InsertTwoColCommand extends Command {
   execute() {
     const { model } = this.editor;
     model.change((writer) => {
-      model.insertContent(createTwoCol(writer));
+      const twoCol = writer.createElement('twoCol');
+      const col1 = writer.createElement('col');
+      const col2 = writer.createElement('col');
+
+      writer.append(col1, twoCol);
+      writer.append(col2, twoCol);
+
+      const paragraph = writer.createElement('paragraph');
+      writer.append(paragraph, col1);
+      writer.appendElement('paragraph', col2);
+
+      model.insertContent(twoCol);
+
+      writer.setSelection(paragraph, 'in');
     });
   }
 
